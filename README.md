@@ -3,7 +3,7 @@
 Public employer-facing portfolio for Ruslan Zaynullin.
 
 Live site:
-- GitHub Pages URL will be added after publish
+- https://ruslan-automation.github.io/ai-automation-portfolio/
 
 Main stack shown on the site:
 - n8n
