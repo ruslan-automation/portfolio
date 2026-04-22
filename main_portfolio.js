@@ -31,6 +31,38 @@ const projectData = {
             note: "В модалке подключено реальное демо 0317.mp4: разговор с пациентом, выбор времени и передача данных в CRM-сценарий."
         }
     },
+    bitrixDispatcher: {
+        badge: "Production Ready",
+        title: "Bitrix CRM AI Dispatcher",
+        lead: "CRM-first система для Bitrix24: принимает заявки из Telegram и веб-форм, маршрутизирует их через AI, создает контакт, лид и задачу в CRM, уведомляет менеджера в Telegram и ведет audit trail для оператора.",
+        metrics: [
+            { value: "2", label: "Канала intake" },
+            { value: "CRM", label: "Contact + Lead + Task" },
+            { value: "SLA", label: "Manual review queue" }
+        ],
+        highlights: [
+            "Система принимает входящие обращения из Telegram и веб-форм, сохраняет сырые события в Postgres и не теряет контекст даже при сбоях.",
+            "OpenRouter-классификация решает, как обработать событие, а Bitrix24 webhook создает или обновляет contact, lead и follow-up task в одном потоке.",
+            "Operator dashboard поддерживает manual review, human handoff, retry/reprocess и Telegram-эскалацию просроченных кейсов."
+        ],
+        architecture: [
+            "FastAPI-приложение отдает intake endpoints, event API, dashboard и публичную demo page поверх одной кодовой базы.",
+            "Локальный pipeline worker двигает события по статусам, а Postgres хранит очередь, audit trail и операторские действия.",
+            "Bitrix24, Telegram и AI-routing собраны как единая операционная система, а не как набор разрозненных интеграций."
+        ],
+        stack: ["FastAPI", "Bitrix24 Webhook", "Postgres", "OpenRouter", "Telegram", "Operator Dashboard"],
+        note: "Это сильный B2B-кейс на стыке CRM, AI и внутренних операций: видно, что я умею строить не только витринные demo, но и управляемые production-like системы с human-in-the-loop логикой.",
+        repo: {
+            url: "https://github.com/ruslan-automation/bitrix-demo-detailing",
+            label: "GitHub репозиторий"
+        },
+        video: {
+            file: "bitrix_demo_subtitled.mp4",
+            type: "video/mp4",
+            title: "Видео работы Bitrix CRM AI Dispatcher",
+            note: "В модалке подключено демо с приемом обращения, AI-маршрутизацией, созданием сущностей в Bitrix24 и операторским контуром."
+        }
+    },
     vacancyBot: {
         badge: "Production Ready",
         title: "Бот для поиска вакансий",
