@@ -33,7 +33,7 @@ const projectData = {
     },
     bitrixDispatcher: {
         badge: "Production Ready",
-        title: "Bitrix CRM AI Dispatcher",
+        title: "AI-диспетчер заявок для Bitrix24",
         lead: "Система для Bitrix24: принимает заявки из Telegram и веб-форм, маршрутизирует их через AI, создает контакт, лид и задачу в CRM, уведомляет менеджера в Telegram и ведет понятный журнал действий для оператора.",
         metrics: [
             { value: "2", label: "Канала приема" },
@@ -59,7 +59,7 @@ const projectData = {
         video: {
             file: "bitrix_demo_subtitled.mp4",
             type: "video/mp4",
-            title: "Видео работы AI-диспетчера для Bitrix24",
+            title: "Видео работы AI-диспетчера заявок для Bitrix24",
             note: "В модалке подключено демо с приемом обращения, AI-маршрутизацией, созданием сущностей в Bitrix24 и операторским контуром."
         }
     },
