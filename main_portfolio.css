@@ -1017,6 +1017,50 @@ h1, h2, h3, h4 { letter-spacing: -0.02em; }
     object-fit: contain;
 }
 
+.modal-video-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-video-caption {
+    padding: 0 4px;
+}
+
+.modal-video-caption h3 {
+    color: rgba(241, 245, 249, 0.92);
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.modal-video-caption p {
+    margin-top: 5px;
+    color: rgba(203, 213, 225, 0.72);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.modal-secondary-videos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 4px;
+}
+
+.modal-secondary-title {
+    color: var(--accent-light);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.modal-secondary-videos .modal-video-frame {
+    aspect-ratio: 16 / 9;
+    border-radius: 18px;
+}
+
 .modal-video-placeholder {
     display: flex;
     flex-direction: column;

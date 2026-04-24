@@ -33,35 +33,43 @@ const projectData = {
     },
     bitrixDispatcher: {
         badge: "Production Ready",
-        title: "AI-диспетчер заявок для Bitrix24",
-        lead: "Система для Bitrix24: принимает заявки из Telegram и веб-форм, маршрутизирует их через AI, создает контакт, лид и задачу в CRM, уведомляет менеджера в Telegram и ведет понятный журнал действий для оператора.",
+        title: "CRM-автоматизация для Bitrix24",
+        lead: "Система для сервисного бизнеса: ведет клиента от сайта до онлайн-записи, оплаты и сделки в Bitrix24. Второй сценарий закрывает прием заявок из Telegram и веб-форм, AI-маршрутизацию и ручную проверку спорных обращений.",
         metrics: [
-            { value: "2", label: "Канала приема" },
-            { value: "CRM", label: "Контакт + лид + задача" },
-            { value: "SLA", label: "Очередь ручной проверки" }
+            { value: "YCLIENTS", label: "Онлайн-запись" },
+            { value: "ЮKassa", label: "Статус оплаты" },
+            { value: "CRM", label: "Сделка + расписание" }
         ],
         highlights: [
-            "Система принимает входящие обращения из Telegram и веб-форм, сохраняет сырые события в Postgres и не теряет контекст даже при сбоях.",
-            "OpenRouter-классификация определяет маршрут обработки, а webhook Bitrix24 создает или обновляет контакт, лид и задачу на дальнейшую обработку в одном потоке.",
-            "Панель оператора поддерживает ручную проверку, передачу спорных кейсов человеку, повторную обработку и Telegram-эскалацию просроченных обращений."
+            "Клиент проходит путь от сайта до записи: выбирает услугу, специалиста и свободное время через YCLIENTS.",
+            "Оплата проходит через тестовый контур ЮKassa, а Bitrix24 получает сделку со статусом оплаты, суммой, услугой, датой и временем.",
+            "Отдельный AI-сценарий принимает обращения из Telegram и веб-форм, классифицирует их и отправляет спорные кейсы на ручную проверку."
         ],
         architecture: [
-            "FastAPI-приложение отдает точки приема, API событий, панель оператора и публичную демо-страницу поверх одной кодовой базы.",
-            "Локальный worker двигает события по статусам, а Postgres хранит очередь, журнал действий и действия операторов.",
-            "Bitrix24, Telegram и AI-маршрутизация собраны как единая операционная система, а не как набор разрозненных интеграций."
+            "Публичная страница записи, YCLIENTS, ЮKassa и Bitrix24 связаны в один клиентский маршрут без ручного переноса данных.",
+            "В Bitrix24 менеджер видит этап клиента: новая запись, ожидание оплаты, оплаченная запись и параметры визита.",
+            "FastAPI, Postgres, OpenRouter и Telegram дополняют CRM-сценарий контуром приема заявок, журналом действий и повторной обработкой сбоев."
         ],
-        stack: ["FastAPI", "Bitrix24 Webhook", "Postgres", "OpenRouter", "Telegram", "Панель оператора"],
-        note: "Это сильный B2B-кейс на стыке CRM, AI и внутренних операций: видно, что я умею строить не только витринные демо, но и управляемые рабочие системы с логикой ручной проверки и передачи человеку.",
+        stack: ["FastAPI", "Bitrix24 Webhook", "YCLIENTS", "ЮKassa", "Postgres", "OpenRouter", "Telegram"],
+        note: "Это сильный B2B-кейс на стыке CRM, записи, оплаты и AI-обработки обращений: видно, что я умею связывать клиентский путь, платежи, расписание и внутренние CRM-процессы в управляемую систему.",
         repo: {
             url: "https://github.com/ruslan-automation/bitrix-demo-detailing",
             label: "GitHub репозиторий"
         },
         video: {
-            file: "bitrix_demo_subtitled.mp4",
+            file: "bitrix_booking_yclients_demo.mp4",
             type: "video/mp4",
-            title: "Видео работы AI-диспетчера заявок для Bitrix24",
-            note: "В модалке подключено демо с приемом обращения, AI-маршрутизацией, созданием сущностей в Bitrix24 и операторским контуром."
-        }
+            title: "Основной сценарий: онлайн-запись, оплата и сделка в Bitrix24",
+            note: "Клиент выбирает услугу и время через YCLIENTS, оплачивает через ЮKassa, а Bitrix24 получает сделку со статусом оплаты и деталями визита."
+        },
+        secondaryVideos: [
+            {
+                file: "bitrix_demo_subtitled.mp4",
+                type: "video/mp4",
+                title: "Сценарий 2: AI-диспетчер заявок",
+                note: "Прием обращений из Telegram и веб-форм, AI-классификация через OpenRouter, создание CRM-сущностей и операторский контур для спорных кейсов."
+            }
+        ]
     },
     vacancyBot: {
         badge: "Production Ready",
@@ -372,13 +380,16 @@ function renderRepoLink(repo) {
 function renderVideoArea(video) {
     if (video?.embedUrl) {
         return `
-            <div class="modal-video-frame">
-                <iframe
-                    src="${video.embedUrl}"
-                    title="${video.title || "Видео проекта"}"
-                    loading="lazy"
-                    allowfullscreen>
-                </iframe>
+            <div class="modal-video-card">
+                <div class="modal-video-frame">
+                    <iframe
+                        src="${video.embedUrl}"
+                        title="${video.title || "Видео проекта"}"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                ${renderVideoCaption(video)}
             </div>
         `;
     }
@@ -386,10 +397,13 @@ function renderVideoArea(video) {
     if (video?.file) {
         const poster = video.poster ? ` poster="${video.poster}"` : "";
         return `
-            <div class="modal-video-frame">
-                <video controls preload="metadata"${poster}>
-                    <source src="${video.file}" type="${video.type || "video/mp4"}">
-                </video>
+            <div class="modal-video-card">
+                <div class="modal-video-frame">
+                    <video controls preload="metadata"${poster}>
+                        <source src="${video.file}" type="${video.type || "video/mp4"}">
+                    </video>
+                </div>
+                ${renderVideoCaption(video)}
             </div>
         `;
     }
@@ -402,6 +416,36 @@ function renderVideoArea(video) {
                 <p class="modal-video-note">${video?.note || "Сюда можно добавить MP4, WebM или iframe с YouTube/Vimeo."}</p>
             </div>
         </div>
+    `;
+}
+
+function renderVideoCaption(video) {
+    if (!video?.title && !video?.note) {
+        return "";
+    }
+
+    return `
+        <div class="modal-video-caption">
+            ${video.title ? `<h3>${video.title}</h3>` : ""}
+            ${video.note ? `<p>${video.note}</p>` : ""}
+        </div>
+    `;
+}
+
+function renderVideoGallery(data) {
+    const secondaryVideos = data.secondaryVideos || [];
+    const secondaryMarkup = secondaryVideos.length
+        ? `
+            <div class="modal-secondary-videos">
+                <span class="modal-secondary-title">Дополнительный сценарий</span>
+                ${secondaryVideos.map((video) => renderVideoArea(video)).join("")}
+            </div>
+        `
+        : "";
+
+    return `
+        ${renderVideoArea(data.video)}
+        ${secondaryMarkup}
     `;
 }
 
@@ -418,7 +462,7 @@ function openModal(projectId) {
         <div class="project-modal-shell">
             <div class="project-modal-media">
                 <span class="modal-kicker">${data.badge}</span>
-                ${renderVideoArea(data.video)}
+                ${renderVideoGallery(data)}
             </div>
             <div class="project-modal-copy">
                 <h2 id="modalTitle">${data.title}</h2>
