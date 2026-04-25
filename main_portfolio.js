@@ -1,6 +1,6 @@
 const projectData = {
     voiceSales: {
-        badge: "Complex Integration",
+        badge: "Сложная интеграция",
         title: "Голосовой AI-менеджер по продажам",
         lead: "Голосовой AI-администратор для стоматологии на базе ElevenLabs и n8n: принимает звонки, проверяет слоты и после подтверждения записи фиксирует клиента в AmoCRM.",
         metrics: [
@@ -32,7 +32,7 @@ const projectData = {
         }
     },
     bitrixDispatcher: {
-        badge: "Production Ready",
+        badge: "Готово к внедрению",
         title: "CRM-автоматизация для Bitrix24",
         lead: "Система для сервисного бизнеса: ведет клиента от сайта до онлайн-записи, оплаты и сделки в Bitrix24. Дополнительные сценарии показывают заявки с сайта, маршрутизацию обращений и ручную проверку спорных кейсов.",
         metrics: [
@@ -78,7 +78,7 @@ const projectData = {
         ]
     },
     vacancyBot: {
-        badge: "Production Ready",
+        badge: "Готово к внедрению",
         title: "Бот для поиска вакансий",
         lead: "Python-система для HH.ru: ищет вакансии, AI-скорит релевантность, генерирует cover letter и работает в auto/manual режиме на VPS.",
         metrics: [
@@ -110,7 +110,7 @@ const projectData = {
         }
     },
     ragKnowledge: {
-        badge: "Vector Database",
+        badge: "Векторная база знаний",
         title: "Корпоративная AI база знаний",
         lead: "Legal RAG Assistant на Pinecone и n8n: Telegram-бот ищет релевантные статьи, цитирует источники и отвечает только по загруженной базе.",
         metrics: [
@@ -142,7 +142,7 @@ const projectData = {
         }
     },
     leadRadarSystem: {
-        badge: "Production Ready",
+        badge: "Готово к внедрению",
         title: "Система авто-поиска лидов",
         lead: "Система из 5 n8n workflow: мониторит hh.ru, FL.ru, Habr Career и Telegram, AI-скорит лиды, пишет их в CRM и ведёт follow-up.",
         metrics: [
