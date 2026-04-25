@@ -1623,7 +1623,7 @@ body {
     object-position: center center;
     opacity: 0.82;
     filter: saturate(1.08) contrast(1.06);
-    transform: scale(1.075);
+    transform: scale(1.095);
     transform-origin: center center;
     transition: transform 0.45s ease;
 }
@@ -1855,14 +1855,17 @@ body {
     display: block;
     object-fit: cover;
     object-position: center center;
-    transform: scale(1.075);
-    transform-origin: center center;
 }
 
 .case-preview-video-contain {
     object-fit: contain;
     object-position: center center;
     background: #080604;
+}
+
+.case-preview-frame-wide .case-preview-video {
+    transform: scale(1.095);
+    transform-origin: center center;
 }
 
 .case-preview-overlay {
@@ -1993,14 +1996,17 @@ body {
     object-position: center center;
     display: block;
     filter: saturate(1.05) contrast(1.04);
-    transform: scale(1.075);
-    transform-origin: center center;
     transition: transform 0.45s ease;
 }
 
-.repo-preview:hover .repo-preview-video,
-.repo-preview:focus-visible .repo-preview-video {
-    transform: scale(1.105);
+.repo-preview-video-horizontal {
+    transform: scale(1.095);
+    transform-origin: center center;
+}
+
+.repo-preview:hover .repo-preview-video-horizontal,
+.repo-preview:focus-visible .repo-preview-video-horizontal {
+    transform: scale(1.125);
 }
 
 .repo-preview-label {
