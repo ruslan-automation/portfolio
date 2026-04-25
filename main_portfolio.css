@@ -1623,6 +1623,9 @@ body {
     object-position: center center;
     opacity: 0.82;
     filter: saturate(1.08) contrast(1.06);
+    transform: scale(1.055);
+    transform-origin: center center;
+    transition: transform 0.45s ease;
 }
 
 .hero-reel-label {
@@ -1852,6 +1855,8 @@ body {
     display: block;
     object-fit: cover;
     object-position: center center;
+    transform: scale(1.055);
+    transform-origin: center center;
 }
 
 .case-preview-video-contain {
@@ -1988,12 +1993,14 @@ body {
     object-position: center center;
     display: block;
     filter: saturate(1.05) contrast(1.04);
+    transform: scale(1.055);
+    transform-origin: center center;
     transition: transform 0.45s ease;
 }
 
 .repo-preview:hover .repo-preview-video,
 .repo-preview:focus-visible .repo-preview-video {
-    transform: scale(1.03);
+    transform: scale(1.085);
 }
 
 .repo-preview-label {
