@@ -1599,7 +1599,7 @@ body {
     font: inherit;
     color: inherit;
     cursor: pointer;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10.6;
     overflow: hidden;
     border-radius: 22px;
     border: 1px solid rgba(242, 215, 160, 0.16);
@@ -1832,7 +1832,7 @@ body {
 
 .case-preview-frame-wide {
     width: min(100%, 560px);
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10.4;
     border-radius: 28px;
 }
 
@@ -1946,7 +1946,7 @@ body {
     font: inherit;
     color: inherit;
     cursor: pointer;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10.5;
     overflow: hidden;
     border-radius: 22px;
     border: 1px solid rgba(242, 215, 160, 0.14);
