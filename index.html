@@ -59,9 +59,9 @@
                     </div>
                 </div>
                 <div class="hero-reel reveal-up">
-                    <button class="hero-reel-card" type="button" onclick="openModal('voiceSales')" aria-label="Открыть кейс Голосовой AI-менеджер для стоматологии">
+                    <button class="hero-reel-card" type="button" onclick="openModal('voiceSales')" aria-label="Открыть кейс Голосовой AI-администратор для клиники">
                         <video class="hero-reel-video" autoplay muted loop playsinline preload="metadata">
-                            <source src="0317_clean.mp4" type="video/mp4">
+                            <source src="voice_clinic_site_booking_demo.mp4" type="video/mp4">
                         </video>
                         <span class="hero-reel-label">Голосовой AI</span>
                     </button>
@@ -261,20 +261,21 @@
                                 <i data-lucide="phone-call" style="width:12px;height:12px"></i>
                                 Сложная интеграция
                             </div>
-                            <h3 class="fc-title">Голосовой AI-менеджер для стоматологии</h3>
-                            <p class="fc-desc">Голосовой AI-администратор для клиник на базе ElevenLabs: принимает
-                                звонок, уточняет жалобу, проверяет свободные слоты и после подтверждения создаёт запись
-                                в AmoCRM.</p>
+                            <h3 class="fc-title">Голосовой AI-администратор для клиники</h3>
+                            <p class="fc-desc">Голосовой AI-администратор для клиники: клиент звонит прямо с сайта,
+                                агент уточняет услугу и удобное время, проверяет свободные окна и доводит сценарий до
+                                записи в расписании и CRM.</p>
                             <ul class="fc-features">
-                                <li>Проверка свободного времени через Google Calendar до подтверждения записи</li>
-                                <li>AmoCRM API v4: контакт, сделка, задача и логика записи в одной цепочке</li>
-                                <li>Telegram-уведомление администратору после успешной фиксации лида</li>
+                                <li>Звонок запускается прямо на сайте без отдельного мессенджера</li>
+                                <li>Голосовой агент уточняет услугу, имя, телефон и желаемое время</li>
+                                <li>Расписание и CRM получают итог без ручного переноса данных</li>
                             </ul>
                             <div class="fc-tech">
-                                <span class="tag">ElevenLabs</span>
-                                <span class="tag">AmoCRM API</span>
-                                <span class="tag">Google Calendar</span>
-                                <span class="tag">Telegram</span>
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">Yandex SpeechKit</span>
+                                <span class="tag">YandexGPT</span>
+                                <span class="tag">YCLIENTS</span>
+                                <span class="tag">Bitrix24</span>
                             </div>
                             <div class="fc-actions">
                                 <button class="btn btn-primary magnetic" type="button" onclick="openModal('voiceSales')">
@@ -287,13 +288,13 @@
                             <div class="case-preview-stage">
                                 <div class="case-preview-frame case-preview-frame-wide">
                                     <video class="case-preview-video case-preview-video-contain" autoplay muted loop playsinline preload="metadata">
-                                        <source src="0317_clean.mp4" type="video/mp4">
+                                        <source src="voice_clinic_site_booking_demo.mp4" type="video/mp4">
                                     </video>
                                     <div class="case-preview-overlay"></div>
                                     <div class="case-preview-badge">Видео кейса</div>
                                     <div class="case-preview-caption">
-                                        <strong>Демо записи в клинику</strong>
-                                        <span>ElevenLabs + AmoCRM + календарь</span>
+                                        <strong>Звонок с сайта в клинику</strong>
+                                        <span>Yandex AI + YCLIENTS + CRM</span>
                                     </div>
                                 </div>
                             </div>
