@@ -1218,33 +1218,6 @@ h1, h2, h3, h4 { letter-spacing: -0.02em; }
     font-weight: 600;
 }
 
-.project-modal-links {
-    margin: 6px 0 22px;
-}
-
-.project-modal-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.8rem 1rem;
-    border-radius: var(--radius-full);
-    background: rgba(59, 130, 246, 0.08);
-    border: 1px solid rgba(96, 165, 250, 0.22);
-    color: var(--accent-light);
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color var(--trans-fast), border-color var(--trans-fast), transform var(--trans-fast), background var(--trans-fast), box-shadow var(--trans-fast);
-}
-
-.project-modal-link:hover {
-    color: #ffffff;
-    background: rgba(59, 130, 246, 0.14);
-    border-color: rgba(96, 165, 250, 0.45);
-    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.14);
-    transform: translateY(-1px);
-}
-
 .project-modal-copy::-webkit-scrollbar,
 .modal-content::-webkit-scrollbar {
     width: 11px;
@@ -2211,18 +2184,6 @@ body {
     background: rgba(255, 244, 221, 0.04);
     border-color: rgba(242, 215, 160, 0.12);
     color: rgba(226, 212, 194, 0.82);
-}
-
-.project-modal-link {
-    background: rgba(242, 215, 160, 0.07);
-    border-color: rgba(242, 215, 160, 0.18);
-    color: var(--accent-light);
-}
-
-.project-modal-link:hover {
-    background: rgba(242, 215, 160, 0.11);
-    border-color: rgba(242, 215, 160, 0.28);
-    box-shadow: 0 0 24px rgba(223, 179, 111, 0.08);
 }
 
 .project-modal-copy::-webkit-scrollbar-thumb,

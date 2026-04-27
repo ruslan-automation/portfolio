@@ -20,10 +20,6 @@ const projectData = {
         ],
         stack: ["Python", "FastAPI", "JavaScript", "HTML/CSS", "Vapi", "OpenAI/LLM", "YCLIENTS API", "Bitrix24 API", "Cloudflare Tunnel"],
         note: "Кейс показывает не просто голосового бота, а связку сайта, голосового AI-администратора, расписания и CRM: клиент проходит путь от звонка до созданной записи.",
-        repo: {
-            url: "https://github.com/ruslan-automation/bitrix-demo-detailing",
-            label: "GitHub репозиторий"
-        },
         video: {
             file: "voice_clinic_site_booking_demo.mp4",
             type: "video/mp4",
@@ -60,10 +56,6 @@ const projectData = {
         ],
         stack: ["FastAPI", "Bitrix24 Webhook", "YCLIENTS", "ЮKassa", "Postgres", "OpenRouter", "Telegram"],
         note: "Это сильный B2B-кейс на стыке CRM, записи, оплаты и AI-обработки обращений: видно, что я умею связывать клиентский путь, платежи, расписание, заявки с сайта и внутренние CRM-процессы в управляемую систему.",
-        repo: {
-            url: "https://github.com/ruslan-automation/bitrix-demo-detailing",
-            label: "GitHub репозиторий"
-        },
         video: {
             file: "bitrix_booking_yclients_demo.mp4",
             type: "video/mp4",
@@ -106,10 +98,6 @@ const projectData = {
         ],
         stack: ["Python 3.10+", "Playwright", "OpenRouter", "SQLite", "Telegram Bot", "systemd"],
         note: "По самому проекту видно, что это уже не просто парсер, а полноценный automation-worker с Telegram control plane, manual review queue и отдельным web/API слоем для управления откликами.",
-        repo: {
-            url: "https://github.com/ruslan-automation/hh-auto-apply",
-            label: "GitHub репозиторий"
-        },
         video: {
             file: "Бот вакансий.mp4",
             type: "video/mp4",
@@ -138,10 +126,6 @@ const projectData = {
         ],
         stack: ["Pinecone", "OpenAI Embeddings", "OpenRouter", "n8n", "Telegram Bot API"],
         note: "Сильная сторона этого кейса в том, что он показывает RAG не как абстрактный чат, а как grounded knowledge system с ingestion, vector search, source citation и защитой от hallucinations.",
-        repo: {
-            url: "https://github.com/ruslan-automation/enterprise-rag-system",
-            label: "GitHub репозиторий"
-        },
         video: {
             title: "Видео демо Legal RAG Assistant",
             note: "Реальный сценарий: вопрос в Telegram, retrieval по Pinecone и ответ с цитированием статьи и disclaimer.",
@@ -170,10 +154,6 @@ const projectData = {
         ],
         stack: ["n8n", "hh.ru API", "OpenRouter", "Gemini Flash", "Google Sheets", "Telegram"],
         note: "По проекту видно, что это уже не просто парсер вакансий, а полноценная lead-ops система: multi-source ingestion, AI triage, CRM-учёт, Telegram-оповещение и follow-up контур поверх таблицы.",
-        repo: {
-            url: "https://github.com/ruslan-automation/lead-radar-system",
-            label: "GitHub репозиторий"
-        },
         video: {
             title: "Видео демо системы авто-поиска лидов",
             note: "Реальный сценарий: новые вакансии, AI scoring, сохранение в CRM и Telegram-оповещение.",
@@ -202,10 +182,6 @@ const projectData = {
         ],
         stack: ["n8n", "Telegram Bot API", "Google Sheets", "HTTP Request", "Stateless Logic"],
         note: "Этот кейс хорошо показывает, как простой бот может не просто собирать контакты, а доводить человека до реальной заявки и сразу передавать её в работу.",
-        repo: {
-            url: "https://github.com/ruslan-automation/telegram-kitchen-sales-bot",
-            label: "GitHub репозиторий"
-        },
         video: {
             file: "Китчен.mp4",
             type: "video/mp4",
@@ -377,20 +353,6 @@ function renderListSection(title, items) {
     `;
 }
 
-function renderRepoLink(repo) {
-    if (!repo?.url) {
-        return "";
-    }
-
-    return `
-        <div class="project-modal-links">
-            <a class="project-modal-link" href="${repo.url}" target="_blank" rel="noopener noreferrer">
-                ${repo.label || "GitHub репозиторий"} <span aria-hidden="true">↗</span>
-            </a>
-        </div>
-    `;
-}
-
 function renderVideoArea(video) {
     if (video?.embedUrl) {
         return `
@@ -484,7 +446,6 @@ function openModal(projectId) {
                 <div class="project-modal-metrics">
                     ${renderMetricCards(data.metrics)}
                 </div>
-                ${renderRepoLink(data.repo)}
                 <div class="project-modal-grid">
                     ${renderListSection("Что внутри", data.highlights)}
                     ${renderListSection("Архитектура", data.architecture)}
