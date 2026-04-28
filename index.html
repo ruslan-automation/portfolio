@@ -248,7 +248,7 @@
                         </a>
                     </div>
                     <p class="section-subtitle" style="margin:0">
-                        Системы в production. От голосовых агентов до полных pipeline'ов автоконтента.
+                        Системы в production. От голосовых агентов и CRM до Telegram Mini App и бизнес-ботов.
                     </p>
                 </div>
 
@@ -347,30 +347,30 @@
                         </div>
                     </div>
 
-                    <!-- Project 3: RAG -->
+                    <!-- Project 3: Telegram Mini App AI Copilot -->
                     <div class="flagship-card glass-panel fade-on-scroll">
                         <div class="fc-content">
                             <div class="fc-badge accent-emerald">
-                                <i data-lucide="database" style="width:12px;height:12px"></i>
-                                Векторная база знаний
+                                <i data-lucide="bot" style="width:12px;height:12px"></i>
+                                Telegram Mini App
                             </div>
-                            <h3 class="fc-title">Корпоративная AI база знаний</h3>
-                            <p class="fc-desc">Юридическая RAG-система на Pinecone и n8n: Telegram-бот находит
-                                релевантные статьи, цитирует источники и отвечает только по загруженной базе без
-                                галлюцинаций.</p>
+                            <h3 class="fc-title">Telegram Mini App AI Copilot</h3>
+                            <p class="fc-desc">Mini App для команды: сотрудник задаёт вопрос текстом или голосом, AI ищет ответ в базе знаний, показывает подтверждение из источников и находит подходящие медиафайлы.</p>
                             <ul class="fc-features">
-                                <li>Pinecone Serverless + OpenAI `text-embedding-3-small` для legal-поиска</li>
-                                <li>OpenRouter с GPT-4o-mini / Gemini Flash отвечает строго по найденному контексту</li>
-                                <li>Два n8n workflow: ingestion в Pinecone и Telegram-чат с цитированием источников</li>
+                                <li>Telegram Mini App с чатом, базой знаний, разделом команды и приглашениями</li>
+                                <li>RAG-поиск по документам и медиа с подтверждением найденных источников</li>
+                                <li>FastAPI backend, worker, хранение файлов, очереди и production-инфраструктура</li>
                             </ul>
                             <div class="fc-tech">
-                                <span class="tag">Pinecone</span>
-                                <span class="tag">OpenAI Embeddings</span>
-                                <span class="tag">OpenRouter</span>
-                                <span class="tag">Telegram</span>
+                                <span class="tag">React + Vite</span>
+                                <span class="tag">Telegram Mini App</span>
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">RAG</span>
+                                <span class="tag">Qdrant</span>
+                                <span class="tag">Docker</span>
                             </div>
                             <div class="fc-actions">
-                                <button class="btn btn-primary magnetic" type="button" onclick="openModal('ragKnowledge')">
+                                <button class="btn btn-primary magnetic" type="button" onclick="openModal('miniAppCopilot')">
                                     Смотреть кейс
                                     <i data-lucide="arrow-up-right" style="width:16px;height:16px"></i>
                                 </button>
@@ -380,43 +380,42 @@
                             <div class="case-preview-stage">
                                 <div class="case-preview-frame">
                                     <video class="case-preview-video" autoplay muted loop playsinline preload="metadata">
-                                        <source src="0317 (2).mp4" type="video/mp4">
+                                        <source src="miniapp_ai_copilot_demo.mp4" type="video/mp4">
                                     </video>
                                     <div class="case-preview-overlay"></div>
-                                    <div class="case-preview-badge">RAG-демо</div>
+                                    <div class="case-preview-badge">Видео Mini App</div>
                                     <div class="case-preview-caption">
-                                        <strong>Ответы по базе знаний</strong>
-                                        <span>Pinecone + OpenRouter + Telegram</span>
+                                        <strong>Чат с базой знаний</strong>
+                                        <span>Telegram Mini App + RAG + FastAPI</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 4: Lead Radar -->
+                    <!-- Project 4: Kitchen Sales Bot -->
                     <div class="flagship-card glass-panel reverse fade-on-scroll">
                         <div class="fc-content">
                             <div class="fc-badge accent-blue">
-                                <i data-lucide="repeat" style="width:12px;height:12px"></i>
-                                Готово к внедрению
+                                <i data-lucide="message-square" style="width:12px;height:12px"></i>
+                                Сбор заявок
                             </div>
-                            <h3 class="fc-title">Система авто-поиска лидов</h3>
-                            <p class="fc-desc">Система из 5 связанных workflow для мониторинга hh.ru, FL.ru, Habr
-                                Career и Telegram-каналов. AI оценивает релевантность, генерирует отклик и ведёт
-                                follow-up по лидам в CRM.</p>
+                            <h3 class="fc-title">Бот для заявок на кухни</h3>
+                            <p class="fc-desc">Telegram-бот для мебельной студии: проводит клиента по короткому опросу, собирает параметры кухни, сохраняет заявку и передаёт её менеджеру.</p>
                             <ul class="fc-features">
-                                <li>5 связанных workflow: hh.ru API, FL.ru RSS, Habr Career, Telegram Monitor и CRM Bot</li>
-                                <li>AI-скоринг и персональный draft через OpenRouter + Gemini Flash</li>
-                                <li>Google Sheets CRM, Telegram-алерты и follow-up напоминания по лидам старше 48 часов</li>
+                                <li>Квиз собирает параметры кухни через inline-кнопки без длинной анкеты</li>
+                                <li>Заявка сохраняется в Google Sheets и уходит менеджеру как готовый лид</li>
+                                <li>После заявки запускается мягкий follow-up с video note</li>
                             </ul>
                             <div class="fc-tech">
-                                <span class="tag">hh.ru / FL.ru / Habr</span>
-                                <span class="tag">OpenRouter AI</span>
-                                <span class="tag">Google Sheets CRM</span>
-                                <span class="tag">Telegram</span>
+                                <span class="tag">n8n</span>
+                                <span class="tag">Telegram Bot API</span>
+                                <span class="tag">Google Sheets</span>
+                                <span class="tag">HTTP Request</span>
+                                <span class="tag">Stateless Logic</span>
                             </div>
                             <div class="fc-actions">
-                                <button class="btn btn-primary magnetic" type="button" onclick="openModal('leadRadarSystem')">
+                                <button class="btn btn-primary magnetic" type="button" onclick="openModal('kitchenSalesBot')">
                                     Смотреть кейс
                                     <i data-lucide="arrow-up-right" style="width:16px;height:16px"></i>
                                 </button>
@@ -424,15 +423,15 @@
                         </div>
                         <div class="fc-visual fc-bg-4">
                             <div class="case-preview-stage">
-                                <div class="case-preview-frame">
-                                    <video class="case-preview-video" autoplay muted loop playsinline preload="metadata">
-                                        <source src="Shorts HH2.mp4" type="video/mp4">
+                                <div class="case-preview-frame case-preview-frame-wide">
+                                    <video class="case-preview-video case-preview-video-contain" autoplay muted loop playsinline preload="metadata">
+                                        <source src="Китчен.mp4" type="video/mp4">
                                     </video>
                                     <div class="case-preview-overlay"></div>
-                                    <div class="case-preview-badge">Демо цепочки</div>
+                                    <div class="case-preview-badge">Квиз + заявка</div>
                                     <div class="case-preview-caption">
-                                        <strong>Поток поиска лидов</strong>
-                                        <span>Sources + AI Score + CRM</span>
+                                        <strong>Telegram-бот для кухонь</strong>
+                                        <span>Опрос + Google Sheets + follow-up</span>
                                     </div>
                                 </div>
                             </div>
@@ -457,34 +456,60 @@
                 <div class="project-grid">
                     <div class="repo-card glass-panel fade-on-scroll">
                         <div class="repo-header">
-                            <span class="repo-icon"><i data-lucide="message-square" style="width:28px;height:28px;color:var(--accent)"></i></span>
-                            <div class="repo-links">
-                                <a href="https://github.com/ruslan-automation/telegram-kitchen-sales-bot" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                                    <i data-lucide="external-link" style="width:18px;height:18px"></i>
-                                </a>
-                            </div>
+                            <span class="repo-icon"><i data-lucide="database" style="width:28px;height:28px;color:var(--emerald)"></i></span>
                         </div>
-                        <button class="repo-preview" type="button" onclick="openModal('kitchenSalesBot')" aria-label="Открыть кейс Бот для заявок на кухни">
-                            <video class="repo-preview-video repo-preview-video-horizontal" autoplay muted loop playsinline preload="metadata">
-                                <source src="Китчен.mp4" type="video/mp4">
+                        <button class="repo-preview" type="button" onclick="openModal('ragKnowledge')" aria-label="Открыть кейс Корпоративная AI база знаний">
+                            <video class="repo-preview-video" autoplay muted loop playsinline preload="metadata">
+                                <source src="0317 (2).mp4" type="video/mp4">
                             </video>
                         </button>
-                        <h3 class="repo-title">Бот для заявок на кухни</h3>
+                        <h3 class="repo-title">Корпоративная AI база знаний</h3>
                         <div class="repo-meta">
                             <span class="repo-badge">
                                 <i data-lucide="play-circle" style="width:14px;height:14px"></i>
-                                Демо внутри
+                                Видео кейса
                             </span>
-                            <span class="repo-badge repo-badge-muted">Опрос + заявка</span>
+                            <span class="repo-badge repo-badge-muted">RAG + источники</span>
                         </div>
-                        <p class="repo-desc">Telegram-бот, который проводит клиента по короткому опросу, собирает заявку на кухню и передаёт её менеджеру.</p>
+                        <p class="repo-desc">Telegram-бот ищет ответы в базе документов, показывает релевантные источники и не отвечает вне загруженного контекста.</p>
+                        <div class="repo-tech">
+                            <span>Pinecone</span>
+                            <span>OpenAI Embeddings</span>
+                            <span>n8n</span>
+                        </div>
+                        <div class="repo-actions">
+                            <button class="btn btn-outline btn-sm magnetic" type="button" onclick="openModal('ragKnowledge')">
+                                Смотреть кейс
+                                <i data-lucide="arrow-up-right" style="width:16px;height:16px"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="repo-card glass-panel fade-on-scroll delay-100">
+                        <div class="repo-header">
+                            <span class="repo-icon"><i data-lucide="radar" style="width:28px;height:28px;color:var(--accent-light)"></i></span>
+                        </div>
+                        <button class="repo-preview" type="button" onclick="openModal('leadRadarSystem')" aria-label="Открыть кейс Система авто-поиска лидов">
+                            <video class="repo-preview-video" autoplay muted loop playsinline preload="metadata">
+                                <source src="Shorts HH2.mp4" type="video/mp4">
+                            </video>
+                        </button>
+                        <h3 class="repo-title">Система авто-поиска лидов</h3>
+                        <div class="repo-meta">
+                            <span class="repo-badge">
+                                <i data-lucide="play-circle" style="width:14px;height:14px"></i>
+                                Видео кейса
+                            </span>
+                            <span class="repo-badge repo-badge-muted">AI-скоринг + CRM</span>
+                        </div>
+                        <p class="repo-desc">Система мониторит hh.ru, FL.ru, Habr Career и Telegram, оценивает лиды через AI и отправляет лучшие варианты в работу.</p>
                         <div class="repo-tech">
                             <span>n8n</span>
-                            <span>Telegram API</span>
+                            <span>OpenRouter</span>
                             <span>Google Sheets</span>
                         </div>
                         <div class="repo-actions">
-                            <button class="btn btn-outline btn-sm magnetic" type="button" onclick="openModal('kitchenSalesBot')">
+                            <button class="btn btn-outline btn-sm magnetic" type="button" onclick="openModal('leadRadarSystem')">
                                 Смотреть кейс
                                 <i data-lucide="arrow-up-right" style="width:16px;height:16px"></i>
                             </button>

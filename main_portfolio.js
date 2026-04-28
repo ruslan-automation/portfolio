@@ -77,6 +77,34 @@ const projectData = {
             }
         ]
     },
+    miniAppCopilot: {
+        badge: "Telegram Mini App",
+        title: "Telegram Mini App AI Copilot",
+        lead: "Mini App для команды: сотрудник задаёт вопрос текстом или голосом, а AI ищет ответ в базе знаний, показывает подтверждение из источников и находит подходящие медиафайлы.",
+        metrics: [
+            { value: "Mini App", label: "Интерфейс в Telegram" },
+            { value: "RAG", label: "Ответы по базе" },
+            { value: "Admin", label: "Загрузка и команда" }
+        ],
+        highlights: [
+            "Пользователь работает внутри Telegram Mini App: задаёт вопрос, получает ответ и видит найденные источники.",
+            "Система умеет работать не только с текстом, но и с медиа: в демо видно поиск подходящего аудиофайла по смыслу.",
+            "Есть командный контур: приглашения сотрудников, роли, база знаний, админка и рабочая инфраструктура для загрузки материалов."
+        ],
+        architecture: [
+            "React + Vite отвечает за Mini App интерфейс, а Next.js admin-web закрывает операционные сценарии.",
+            "FastAPI backend проверяет Telegram initData, держит сессии, отдаёт SSE chat streaming и API для базы знаний.",
+            "Worker, Redis, Qdrant, MinIO, PostgreSQL и Docker Compose собирают ingestion, хранение файлов, поиск и production-развёртывание."
+        ],
+        stack: ["React", "Vite", "Telegram Mini App", "FastAPI", "RAG", "Qdrant", "Redis", "MinIO", "PostgreSQL", "Docker"],
+        note: "Этот кейс сильнее обычного RAG-бота: здесь есть полноценный продуктовый интерфейс, командные сценарии, загрузка материалов, поиск по базе и backend-инфраструктура вокруг AI.",
+        video: {
+            file: "miniapp_ai_copilot_demo.mp4",
+            type: "video/mp4",
+            title: "Telegram Mini App: чат с базой знаний и поиск медиа",
+            note: "В демо видно, как сотрудник задаёт вопрос, получает ответ с подтверждением из базы и находит подходящий медиафайл по смыслу."
+        }
+    },
     vacancyBot: {
         badge: "Готово к внедрению",
         title: "Бот для поиска вакансий",
